@@ -1,0 +1,15 @@
+version: '3.9'
+name: podberiru_front
+services:
+  frontend:
+    hostname: podberiru_front
+    restart: always 
+    container_name: podberiru_front
+    build:
+      context: ../podberiru_front
+      target: dev
+    #  target: prod
+    user: root
+    ports:
+      - "33600:8080"  # dev
+      #- "8080:3000"   # prod
